@@ -1,6 +1,11 @@
+const Cardapio = require("../models/Cardapio");
+
 const controller = {
   index: (req,res)=>{
-    res.send("Lista de todas as pizzas do cardápio");
+    //res.send("Lista de todas as pizzas do cardápio\n");
+    let cardapio = Cardapio.listarCardapio();
+
+    res.send(cardapio);
   },
 
   cadastrar: (req,res)=>{
